@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Interactive Navigation Menu</title>
+
+<style>
+
+/* Reset */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+/* Navbar */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 60px;
+background:transparent;
+transition:0.4s;
+z-index:1000;
+}
+
+/* Logo */
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:white;
+}
+
+/* Menu */
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-size:18px;
+position:relative;
+transition:0.3s;
+}
+
+/* Hover Effect */
+
+nav ul li a:hover{
+color:#ff9800;
+transform:scale(1.1);
+}
+
+/* Underline animation */
+
+nav ul li a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:#ff9800;
+transition:0.3s;
+}
+
+nav ul li a:hover::after{
+width:100%;
+}
+
+/* Scroll Effect */
+
+.scrolled{
+background:#222;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Page Content */
+
+section{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-size:40px;
+color:white;
+text-align: center;
+}
+.home{
+background:linear-gradient(to right,blue,skyblue);
+}
+
+.about{
+background:linear-gradient(to right,brown,lavender);
+}
+
+.services{
+background:linear-gradient(to right,green,yellow);
+}
+ .portfolio{
+    background:linear-gradient(to right,rgb(89, 187, 206),violet);
+ }
+
+.contact{
+background:linear-gradient(to right,#fc466b,#3f5efb);
+}
+
+
+</style>
+</head>
+
+<body>
+
+<nav id="navbar">
+
+<div class="logo">Prodigy</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section id="home" class="home">
+<h1>Home Section</h1><br>
+<p>Welcome to Prodigy Infotech Internship Task</p>
+</section>
+
+<section id="about" class="about">
+<h1>About Section</h1><br>
+<p>This is About Section</p>
+</section>
+
+<section id="services" class="services">
+<h1>Services Section</h1><br>
+<p>This is Services section</p>
+</section>
+
+<section id="portfolio" class="portfolio">
+<h1>Portfolio Section</h1><br>
+<p>This is Portfolio section</p>
+</section>
+
+
+<section id="contact" class="contact">
+<h1>Contact Section</h1><br>
+<p>This is contact section</p>
+</section>
+
+<script>
+
+/* Scroll Navbar Effect */
+
+window.addEventListener("scroll",function(){
+
+let navbar=document.getElementById("navbar");
+
+if(window.scrollY>50){
+navbar.classList.add("scrolled");
+}
+else{
+navbar.classList.remove("scrolled");
+}
+
+});
+
+</script>
+
+</body>
+</html>
